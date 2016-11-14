@@ -1,0 +1,17 @@
+{
+  "name": "file-o-phile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "chokidar": "^1.6.1",
+    "config": "^1.24.0",
+    "debug": "^2.3.2"
+  }
+}
