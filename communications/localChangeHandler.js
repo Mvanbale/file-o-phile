@@ -18,23 +18,25 @@ const getHashFromFile = (path) => {
 // this will handle any function calls linked to our events
 module.exports = (comms) => ({
   // if a file is added
-  added: (path) => {
+  addedLocally: (path) => {
     getHashFromFile(path).then((hash)=>{
       debug(`${path} was added this is the hash:`);
       debug(hash);
       debug(comms);
-      comms.sender.listRequest();
+      comms.sender.addFile(path, hash);
     });
   },
   // if a file is changed
-  changed: (path) => {
+  changedLocally: (path) => {
     getHashFromFile(path).then((hash)=>{
       debug(`${path} was changed this is the hash:`);
       debug(hash);
+      comms.sender.updateFile(path, hash);
     });
   },
   // if a file is deleted
-  deleted: (path) => {
+  deletedLocally: (path) => {
     debug(`${path} was changed this is the hash:`);
+    comms.sender.deleteFile(path, hash);
   }
 })

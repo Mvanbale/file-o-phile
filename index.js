@@ -1,5 +1,5 @@
 const watch = require('./filewatching/watcher');
-const commandHandler = require('./communications/commandHandler');
+const localChangeHandler = require('./communications/commandHandler');
 const tcpInitializer = require('./communications/tcpInitializer');
 const tcpSender = require('./communications/tcpSender');
 const tcpReceiver = require('./communications/tcpReceiver');
@@ -14,5 +14,5 @@ tcpInitializer.init()
         sender: tcpSender(socket)
       }))
       .then(comms => {
-      watch(commandHandler(comms));
+      watch(localChangeHandler(comms));
     });

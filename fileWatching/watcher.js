@@ -14,13 +14,13 @@ module.exports = (clientCommunications) => {
   debug('Initializing file watching.');
   watcher
     .on('add', path => {
-      clientCommunications.added(path);
+      clientCommunications.addedLocally(path);
     })
     .on('change', path => {
-      clientCommunications.changed(path);
+      clientCommunications.changedLocally(path);
     })
     .on('unlink', path => {
-      clientCommunications.deleted(path);
+      clientCommunications.deletedLocally(path);
     })
     .on('ready', () => {
       debug('Initial scan complete. Ready for changes');
