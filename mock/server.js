@@ -7,7 +7,8 @@ module.exports = () => {
     // 'connection' listener
     debug('client connected');
     c.on('data', function(data) {
-  var response = data.toString().trim();
+  var response = data.toString();
+  debug(data);
 
   if (/disconnect/.test(response)) {
     console.log("Client is diconnecting.");

@@ -4,7 +4,7 @@ const chokidar = require('chokidar');
 const thingsToIgnore = config.get('regexIgnore');
 
 const debug = require('debug')('file-o-phile:file-watcher');
-
+process.chdir('./folderToSync')
 const watcher = chokidar.watch('.', {
   ignored: thingsToIgnore
 });
