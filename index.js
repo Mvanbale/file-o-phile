@@ -6,7 +6,7 @@ const tcpReceiver = require('./communications/tcpReceiver');
 
 const mockServer = require('./mock/server');
 const debug = require('debug')('file-o-phile:index');
-mockServer();
+// mockServer();
 
 tcpInitializer.init()
   .then((socket) => ({
