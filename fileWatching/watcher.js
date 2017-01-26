@@ -10,7 +10,11 @@ const watcher = chokidar.watch('.', {
 });
 
 module.exports = (clientCommunications) => {
+  
   debug(`We were given the following ignore REGEX: ${thingsToIgnore}`);
+  
+  clientCommunications.checkRemoteChanges();
+
   debug('Initializing file watching.');
   watcher
     .on('add', path => {

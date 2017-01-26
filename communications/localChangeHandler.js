@@ -28,5 +28,10 @@ module.exports = (comms) => ({
   deletedLocally: (path) => {
     debug(`${path} was deleted this is the hash:`);
     comms.sender.deleteFile(path);
+  },
+  checkRemoteChanges: () => {
+    var files = comms.sender.listFiles().then(function(files){
+      console.log(files);
+    });
   }
 })

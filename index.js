@@ -10,7 +10,7 @@ const debug = require('debug')('file-o-phile:index');
 
 tcpInitializer.init()
   .then((socket) => ({
-        receiver: tcpReceiver(socket),
+        receiver: tcpReceiver(socket, this),
         sender: tcpSender(socket)
       }))
       .then(comms => {

@@ -58,7 +58,28 @@ ${JSON.stringify(responseObject)}`);
       client.write(`DELETE idh14sync/1.0
 
 ${JSON.stringify(responseObject)}`);
-    }
+    },
+    listFiles: async function listFiles() {
+      debug('Sending listFiles request');
+      const responseObject = {
+      }
+      console.log({
+        responseObject
+      });
+      client.write(`LIST idh14sync/1.0
+
+${JSON.stringify(responseObject)}`);
+
+    },
+    getFile: async function getFile(path) {
+      debug('Sending GET request');
+      const responseObject = {
+        "filename": path
+      }
+      client.write(`GET idh14sync/1.0
+
+${JSON.stringify(responseObject)}`);
+    },
   }
 
 }
